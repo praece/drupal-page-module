@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Custom pages for Praece websites.
+ */
+
+/**
+ * Custom menu routing.
+ */
+function praece_custom_pages_menu() {
+  // Front page.
+  $items['home-test'] = array(
+    'page callback' => 'praece_custom_home',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Custom theme hooks.
+ */
+function praece_custom_pages_theme($existing, $type, $theme, $path) {
+  $items['praece-custom-home'] = array(
+    'template' => 'praece-custom-home',
+    'path' => drupal_get_path('module', 'praece_custom_pages'),
+    'variables' => array(),
+  );
+
+  return $items;
+}
+
+/**
+ * Generate the custom home page.
+ */
+function praece_custom_home() {
+  drupal_set_title('Title Placeholder');
+
+  $output = array(
+    '#theme' => 'praece-custom-home',
+  );
+
+  return render($output);
+}

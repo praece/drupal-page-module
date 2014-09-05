@@ -1,0 +1,6 @@
+; $Id$
+name = Praece Custom Pages
+description = Page templates for praece sites.
+core = 7.x
+package = Praece Custom
+files[] = praece_custom_pages.module
